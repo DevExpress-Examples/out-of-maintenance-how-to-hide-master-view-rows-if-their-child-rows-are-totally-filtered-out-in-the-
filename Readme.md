@@ -1,3 +1,10 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [FilterHelper.cs](./CS/E3747CS/FilterHelper.cs)
+* [Form1.cs](./CS/E3747CS/Form1.cs)
+* [Program.cs](./CS/E3747CS/Program.cs)
+<!-- default file list end -->
 # How to hide master view rows if their child rows are totally filtered out in the child view
 
 
