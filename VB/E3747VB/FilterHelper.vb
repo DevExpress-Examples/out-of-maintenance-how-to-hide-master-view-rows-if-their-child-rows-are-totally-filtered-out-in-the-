@@ -16,8 +16,8 @@ Namespace FilterMasterDetailGrid
 
 		Public Sub New(ByVal parentView As GridView, ByVal childView As GridView)
 			_parentView = parentView
-			AddHandler _parentView.CustomRowFilter, AddressOf _view_CustomRowFilter
 			_childView = childView
+			AddHandler _parentView.CustomRowFilter, AddressOf _view_CustomRowFilter
 		End Sub
 
 		Private Sub _view_CustomRowFilter(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Base.RowFilterEventArgs)

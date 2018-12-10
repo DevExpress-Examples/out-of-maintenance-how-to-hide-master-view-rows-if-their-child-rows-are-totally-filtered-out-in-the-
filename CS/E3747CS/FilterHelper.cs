@@ -18,8 +18,8 @@ namespace FilterMasterDetailGrid
         public FilterHelper(GridView parentView, GridView childView)
         {
             _parentView = parentView;
+			_childView = childView;
             _parentView.CustomRowFilter += _view_CustomRowFilter;
-            _childView = childView;
         }
 
         void _view_CustomRowFilter(object sender, DevExpress.XtraGrid.Views.Base.RowFilterEventArgs e)
