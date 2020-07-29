@@ -29,9 +29,11 @@ Namespace FilterMasterDetailGrid
             Else
                 pdc = TypeDescriptor.GetProperties(DirectCast(source, Object).GetType().GetProperty("Item").PropertyType)
             End If
-            Dim ev As New ExpressionEvaluator(pdc, controller.FilterCriteria)
-            e.Visible = Not IsEmptyDetail(e.ListSourceRow, controller) AndAlso ev.Fit(source(e.ListSourceRow))
-            e.Handled = True
+            If view.FindFilterText = String.Empty Then
+                Dim ev As New ExpressionEvaluator(pdc, controller.FilterCriteria)
+                e.Visible = Not IsEmptyDetail(e.ListSourceRow, controller) AndAlso ev.Fit(source(e.ListSourceRow))
+                e.Handled = True
+            End If
         End Sub
 
 
