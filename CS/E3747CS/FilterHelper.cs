@@ -36,9 +36,11 @@ namespace FilterMasterDetailGrid
             {
                 pdc = TypeDescriptor.GetProperties(source.GetType().GetProperty("Item").PropertyType);
             }
-            ExpressionEvaluator ev = new ExpressionEvaluator(pdc, controller.FilterCriteria);
-            e.Visible = !IsEmptyDetail(e.ListSourceRow, controller) && ev.Fit(source[e.ListSourceRow]);
-            e.Handled = true;
+            if(view.FindFilterText == string.Empty) {
+                ExpressionEvaluator ev = new ExpressionEvaluator(pdc, controller.FilterCriteria);
+                e.Visible = !IsEmptyDetail(e.ListSourceRow, controller) && ev.Fit(source[e.ListSourceRow]);
+                e.Handled = true;
+            }
         }
 
 
